@@ -117,11 +117,11 @@ def get_cleaned_inner_text(target_element: ElementTree.Element) -> str or None:
     return result
 
 
-def get_cleaned_inner_text_with_validation(target_element: ElementTree.Element) -> str or None:
+def get_cleaned_inner_text_with_validation(target_elements: List[ElementTree.Element]) -> str or None:
     """
     When element has only content, you can perform validation and getting text.
 
-    :param target_element: Element(it has only content) you want to get inner text.
+    :param target_elements: Elements(it is just one element list, it has only content) you want to get inner text.
     :return: Refined text or None
     """
-    return get_cleaned_inner_text(validate_element(target_element))
+    return get_cleaned_inner_text(validate_element(target_elements))
